@@ -1,0 +1,14 @@
+.product-list {
+    padding: 100px;
+}
+
+.product-list.list {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.product-list.module {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px 10px;
+}

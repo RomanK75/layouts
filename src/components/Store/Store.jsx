@@ -10,9 +10,19 @@ import { products } from '../../data/data.js'
 
 
 export default function Store() {
-    const [view, setView] = useState('module')
+    const viewStorage = {
+        key: 'view',
+        get () {
+            return localStorage.getItem(this.key) || 'module'
+        },
+        set (value) {
+            localStorage.setItem(this.key, value)
+        }
+    }
+    const [view, setView] = useState(viewStorage.get())
     const viewSwitch = (view) => {
         setView(view)
+        viewStorage.set(view)
     }
     const icons = [view_list, view_module]
     return (
